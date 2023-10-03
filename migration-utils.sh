@@ -4,6 +4,15 @@ export BACKUP_DATA=$BACKUP/miko
 export DATA_ROOT=/home/mitos
 
 # rsync -av SRC DEST
+# printf 'Is this a good question (y/n)? '
+# read answer
+
+# if [ "$answer" != "${answer#[Yy]}" ] ;then 
+#     echo Yes
+# else
+#     echo No
+# fi
+
 
 function rsync-recursive {
     pushd $1
