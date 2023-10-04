@@ -17,7 +17,22 @@ Projects will use git as much as possible, then newer projects put in archive wi
 
 Then all buckup should be possible to be done with only single command in terminal.
 
+The configurations files (at least temporarily) will go into `$BACKUP/config` directory, despite being scattered across the whole file system. That's why it's content wouldn't make sense to be synchronised with the `$HOME/.config` directory. They (for now) will have to be managed manually, but in near fuutre, hopefully, it could be incorporated into it's own git repository (maybe even a stripped down branch of this one) to offer fully fledged backup capabilities.
+
 # Configurations
+
+System taskbar:
+```
+start|explorer|browser|discord|blender|clion|godot
+```
+
+Favorites in start menu:
+- VS Code
+- Gimp
+- Thunderbird
+- Xournal++
+- directories shortcuts
+- (variouse code editors?)
 
 ## Custom shortcuts
 
@@ -47,10 +62,35 @@ YouTube|Translate|Moodle|USOS|Terminarz|lichess|chess.com|itch.io
 adventofcode|roll20|github|rosalind|localhost|boardgames|reddit|wolfram
 ```
 
+## Dolphin
+
+Main toolbar:
+```
+back|next|up|sep|new|newdir|trash|addres|refresh|find|terminal|menu
+```
+
+Places:
+- home
+- desktop
+- downloads
+- Archives
+- Projects
+- rpg
+- studia
+- Trash
+
 ## Shell profile and environment variables
 
-Additional custom env variables:
+In user shell profile there should be some environment variables present:
+
+- Standard XDG Base Directories ([link](https://wiki.archlinux.org/title/XDG_Base_Directory))
+- Emscripten configuration variables so it follows standard configurations
+- `KDEHOME` variable to put KDE configurations in place
+- some variables for X11 (consult link above)
+- set `ZDOTDIR=$HOME/.config/zsh` in `/etc/zsh/zshenv`
+
+Additional custom environment variables:
 
 - `$PROJECTS` - set to the full path to the Projects directory (`$HOME/Projects`)
 - `$ARCHIVES` - set to the full path to the Archives directory (`$DATA_ROOT/Archives` or `$HOME/Archives`)
-- `$SCRIPTS` - set to the path to srcipts home directory (probably `$HOME/scripts`) and added to the `$PATH` variable
+- `$SCRIPTS_ROOT` - set to the path to srcipts home directory (probably `$HOME/scripts`) and added to the `$PATH` variable
