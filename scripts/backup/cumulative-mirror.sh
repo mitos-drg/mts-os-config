@@ -25,6 +25,7 @@ function log-error {
     echo "`date "+%H:%M:%S"` [ \e[31mERROR\e[0m ]:" "$@"
 }
 
+
 # Set up variables
 SRC=$1
 DST=$2
