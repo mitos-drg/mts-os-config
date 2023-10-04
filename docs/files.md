@@ -18,13 +18,43 @@ $HOME
 + Pictures -> $DATA_ROOT/Pictures
 + Projects
 + RPG -> $DATA_ROOT/RPG
-+ Studia
++ Studia -> $DATA_ROOT/Studia
 + Videos -> $DATA_ROOT/Videos
 ```
+
+```
+$DATA_ROOT
++ Archives
++ Books
++ Documents
++ Music
++ Pictures
++ RPG
++ Studia 
++ Videos 
+```
+
+```
+$DATA_STORAGE
++ Instale
++ Projects
+```
+
+## Drives and mount points
+
+As number of physical drives may vary between my diffrent systems they should be mounted hovewer it makes sense for theme and instead of reling on consistent paths and volume names file organisation should be dependant on some environment variables. Moreover I propose to keep as much as possible the following principle: one physical disk, one partition.
+
+The main (system one) drive should be without a doubt mountet simply as *root* (`/`). The main user home directory should be left at its default location in `/home/user`, and per usual the `$HOME` environment variable will point to it. I decided, that this home directory shouldn't be placed on separate partition, but just on the system one.
+
+Main data drive (if diffrent than system drive) should be mounted in place like `/mnt/data-main` and it would be reffered to as `$DATA_ROOT`. This variable will be the base directory for most bulk data storage, such as *Documents*, *Movies*, *Pictures*, *Music*, *Books* and potentially *Archives* (which should be rather reffered to as `$ARCHIVES`).
+
+The `$DATA_STORAGE` mount point should be generally for non-personal, more static and/or less important data. But it may also hold immidiate backup copy of Projects.
 
 ## Backup
 
 On the backup drive there is flat directory hierarchy, basically the same as in the `$HOME` directory. Hovever it should be possible to perform quick or full data backup with just a single command, which will most likely be a script set up in a scripts home directory.
+
+This external backup drive should be mounted and accessed simply as a `$BACKUP`, to allow more flexibility in mounting it across various systems.
 
 ```
 $BACKUP
@@ -32,6 +62,7 @@ $BACKUP
 + Archives
 + Books
 + Documents
++ Games
 + Music
 + Pictures
 + Projects
