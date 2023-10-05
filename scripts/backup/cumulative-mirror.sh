@@ -36,7 +36,7 @@ log-info "Starting synchronization $SRC <-> $DST..."
 pushd $SRC
 
 # Syncronise files only
-rsync -dlptgov ./ $DST
+rsync -dlptgou ./ $DST
 
 # Iterate over it's content
 for dir in *
