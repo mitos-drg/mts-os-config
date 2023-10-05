@@ -1,5 +1,6 @@
 export BACKUP=/run/media/mitos/Miko_Kopie
 export BACKUP_DATA=$BACKUP/miko
+export SCRIPTS_ROOT=/home/mitos/Projects/mts-os-config/scripts
 
 export DATA_ROOT=/home/mitos
 
