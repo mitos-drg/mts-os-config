@@ -63,11 +63,11 @@ do
     else
         # Pull, if project exists in archives (push will create it otherwise)
         if [ -d $BACKUP/Archives/$project ]; then
-            rsync -a $BACKUP/Archives/$project/. $ARCHIVES/$project
+            rsync -au $BACKUP/Archives/$project/. $ARCHIVES/$project
         fi
         
         # Push local changes
-        rsync -a $ARCHIVES/$project $BACKUP/Archives
+        rsync -au $ARCHIVES/$project $BACKUP/Archives
     fi
 done
 
@@ -91,7 +91,7 @@ do
                 popd
             else
                 mkdir $ARCHIVES/$project
-                rsync -a $BACKUP/Archives/$project/. $ARCHIVES/$project
+                rsync -au $BACKUP/Archives/$project/. $ARCHIVES/$project
             fi
         fi
     fi

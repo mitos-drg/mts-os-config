@@ -48,11 +48,11 @@ do
     
     # Pull directory content if it exists in DST
     if [ -d $DST/$dir ]; then
-        rsync -a $DST/$dir/ $SRC/$dir
+        rsync -au $DST/$dir/ $SRC/$dir
     fi
     
     # Push local content
-    rsync -a $SRC/$dir $DST
+    rsync -au $SRC/$dir $DST
 done
 
 # Step into DST directory
@@ -69,7 +69,7 @@ do
         read answer
 
         if [ "$answer" != "${answer#[Yy]}" ]; then 
-            rsync -a $DST/$dir $SRC
+            rsync -au $DST/$dir $SRC
         fi
     fi
 done
