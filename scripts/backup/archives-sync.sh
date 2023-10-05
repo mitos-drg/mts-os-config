@@ -9,15 +9,15 @@
 
 ### UTILITIES ###
 function log-info {
-    echo "`date "+%H:%M:%S"` [ \e[34mINFO\e[0m ]:" "$@"
+    echo -e "`date "+%H:%M:%S"` [ \e[34mINFO\e[0m ]:" "$@"
 }
 
 function log-warning {
-    echo "`date "+%H:%M:%S"` [ \e[33mWARNING\e[0m ]:" "$@"
+    echo -e "`date "+%H:%M:%S"` [ \e[33mWARNING\e[0m ]:" "$@"
 }
 
 function log-error {
-    echo "`date "+%H:%M:%S"` [ \e[31mERROR\e[0m ]: ""$@"
+    echo -e "`date "+%H:%M:%S"` [ \e[31mERROR\e[0m ]: ""$@"
 }
 
 
