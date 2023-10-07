@@ -36,25 +36,25 @@ do
     log-info "Making backup of $project..."
     
     # Check if it is git-based project
-    if [ -d $project/.git ]; then
+    if [ -d "$project/.git" ]; then
         # Create backup repository if it doesn't exist
-        if [ ! -d $BACKUP/Archives/$project.git ]; then
+        if [ ! -d "$BACKUP/Archives/$project.git" ]; then
             # Warn user about auto-generating backup repository
             log-warning "$project doesn't have backup repository. Creating..."
             
             # Clone repository as a bare one
             pushd $BACKUP/Archives
-            git clone --bare $ARCHIVES/$project $project.git
-            cd $project.git
+            git clone --bare "$ARCHIVES/$project" "$project.git"
+            cd "$project.git"
             git remote remove origin
             popd
             
             # Set up local remotes
-            git remote add backup $BACKUP/Archives/$project.git
+            git remote add backup "$BACKUP/Archives/$project.git"
         fi
         
         # Push all local changes to backup repository
-        pushd $project
+        pushd "$project"
         git pull backup
         git push --all --tags backup
         popd
@@ -62,12 +62,12 @@ do
     # Non git-based archival projects are simply backed up with rsync
     else
         # Pull, if project exists in archives (push will create it otherwise)
-        if [ -d $BACKUP/Archives/$project ]; then
-            rsync -au $BACKUP/Archives/$project/. $ARCHIVES/$project
+        if [ -d "$BACKUP/Archives/$project" ]; then
+            rsync -au "$BACKUP/Archives/$project/." "$ARCHIVES/$project"
         fi
         
         # Push local changes
-        rsync -au $ARCHIVES/$project $BACKUP/Archives
+        rsync -au "$ARCHIVES/$project" "$BACKUP/Archives"
     fi
 done
 
@@ -79,19 +79,19 @@ do
     basename=${project%.git}
     
     # Check if it does not exist in local Archive
-    if [ ! -d $ARCHIVES/$basename ]; then
+    if [ ! -d "$ARCHIVES/$basename" ]; then
         printf "$basename is missing from local Archives.\nWould you like to copy it [y/n]? "
         read answer
         
         if [ "$answer" != "${answer#[Yy]}" ] ;then 
             log-info "Copying $basename into local Archive..."
-            if [ $project == *.git ]; then
+            if [ "$project" == *.git ]; then
                 pushd $ARCHIVES
-                git clone -o backup $BACKUP/Archives/$project
+                git clone -o backup "$BACKUP/Archives/$project"
                 popd
             else
-                mkdir $ARCHIVES/$project
-                rsync -au $BACKUP/Archives/$project/. $ARCHIVES/$project
+                mkdir "$ARCHIVES/$project"
+                rsync -au "$BACKUP/Archives/$project/." "$ARCHIVES/$project"
             fi
         fi
     fi

@@ -33,43 +33,43 @@ DST=$2
 log-info "Starting synchronization $SRC <-> $DST..."
 
 # Step into SRC directory
-pushd $SRC
+pushd "$SRC"
 
 # Syncronise files only
-rsync -dlptgou ./ $DST
+rsync -dlptgou ./ "$DST"
 
 # Iterate over it's content
 for dir in *
 do
     # Skip all files
-    if [ -f $dir ]; then
+    if [ -f "$dir" ]; then
         continue
     fi
     
     # Pull directory content if it exists in DST
-    if [ -d $DST/$dir ]; then
-        rsync -au $DST/$dir/ $SRC/$dir
+    if [ -d "$DST/$dir" ]; then
+        rsync -au "$DST/$dir/" "$SRC/$dir"
     fi
     
     # Push local content
-    rsync -au $SRC/$dir $DST
+    rsync -au "$SRC/$dir" "$DST"
 done
 
 # Step into DST directory
 popd
-pushd $DST
+pushd "$DST"
 
 # Iterate over DST contents
 for dir in *
 do
     # Check if this directory exists only on DST
-    if [ ! -e $SRC/$dir ]; then
+    if [ ! -e "$SRC/$dir" ]; then
         # Ask whether to copy or not (deletions users should manage manually)
         printf "$dir is missing from $SRC, do you want to copy it [Y/n]? "
         read answer
 
         if [ "$answer" != "${answer#[Yy]}" ]; then 
-            rsync -au $DST/$dir $SRC
+            rsync -au "$DST/$dir" "$SRC"
         fi
     fi
 done

@@ -30,31 +30,31 @@ log-info "Starting backup process of Projects..."
 for project in *
 do
     # Check if we accidentally hit a file
-    if [ -f $project ]; then
+    if [ -f "$project" ]; then
         log-error "$project is a file, not directory!"
         continue
     fi
     log-info "Making backup of $project..."
     
     # Go into project directory
-    pushd $project
+    pushd "$project"
     
     # Check if it is git-based and backup it using git if so
     if [ -d .git ]; then
         # Create backup repository if it doesn't exist
-        if [ ! -d $BACKUP/Projects/$project.git ]; then
+        if [ ! -d "$BACKUP/Projects/$project.git" ]; then
             # Warn user about auto-generating backup repository
             log-warning "$project doesn't have backup repository. Creating..."
             
             # Clone repository as a bare one
             pushd $BACKUP/Projects
-            git clone --bare $PROJECTS/$project $project.git
-            cd $project.git
+            git clone --bare "$PROJECTS/$project" "$project.git"
+            cd "$project.git"
             git remote remove origin
             popd
             
             # Set up local remotes
-            git remote add backup $BACKUP/Projects/$project.git
+            git remote add backup "$BACKUP/Projects/$project.git"
         fi
         
         # Push all local changes to backup repository

@@ -1,4 +1,4 @@
-export BACKUP=/run/media/mitos/Miko_Kopie
+export BACKUP=/mnt/backup
 export BACKUP_DATA=$BACKUP/miko
 export SCRIPTS_ROOT=/home/mitos/Projects/mts-os-config/scripts
 
@@ -17,14 +17,14 @@ export DATA_ROOT=/home/mitos
 
 function rsync-recursive {
     pushd $1
-    rsync -dlptgov ./ $2
+    rsync -dlptgouv ./ $2
     find . -maxdepth 1 -type d -not -name "." -exec rsync -rlptgov {} $2 \;
     popd
 }
 
 function rsync-recursive-try {
     pushd $1
-    rsync -dlptgovn ./ $2
+    rsync -dlptgovun ./ $2
     find . -maxdepth 1 -type d -not -name "." -exec rsync -rlptgovn {} $2 \;
     popd
 }
