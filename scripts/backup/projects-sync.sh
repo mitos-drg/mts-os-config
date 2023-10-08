@@ -58,8 +58,8 @@ do
         fi
         
         # Push all local changes to backup repository
-        git pull backup
-        git push --all --tags backup
+        git fetch backup
+        git push --all backup
         
     # Not git-based projects should specify their of backup strategies with
     # eighter backup.sh or scripts/backup.sh

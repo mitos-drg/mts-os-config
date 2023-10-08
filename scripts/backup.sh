@@ -6,7 +6,7 @@
 
 
 ### BACK UP PROJECTS ###
-$SCRIPTS_ROOT/backup/project-sync.sh
+$SCRIPTS_ROOT/backup/projects-sync.sh
 
 ### BACK UP ARCHIVES ###
 $SCRIPTS_ROOT/backup/archives-sync.sh
@@ -28,4 +28,5 @@ $SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Books $BACKUP/Books
 $SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Games $BACKUP/Games
 $SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Music $BACKUP/Music
 $SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Pictures $BACKUP/Pictures
-$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Videos $BACKUP/Videos
+$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Videos/Filmy $BACKUP/Videos/Filmy
+$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Videos/Video $BACKUP/Videos/Video

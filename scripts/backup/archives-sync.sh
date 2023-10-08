@@ -29,7 +29,7 @@ log-info "Starting backup process of Archives..."
 for project in *
 do
     # Check if we accidentally hit a file
-    if [ -f $project ]; then
+    if [ -f "$project" ]; then
         log-error "$project is a file, not directory!"
         continue
     fi

@@ -3,6 +3,8 @@ export BACKUP_DATA=$BACKUP/miko
 export SCRIPTS_ROOT=/home/mitos/Projects/mts-os-config/scripts
 
 export DATA_ROOT=/home/mitos
+export PROJECTS=/Projects
+export ARCHIVES=/Archives
 
 # rsync -av SRC DEST
 # printf 'Is this a good question (y/n)? '
