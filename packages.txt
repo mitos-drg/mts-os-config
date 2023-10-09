@@ -1,8 +1,7 @@
-# Most basic packages, system ones
 ark
 android-udev
 avahi
-#bluedevil # for laptops only
+
 coreutils
 diffutils
 drkonqi
@@ -27,20 +26,20 @@ patch
 pipewire-alsa
 pipewire-pulse
 pkgconf
-#powerdevil # for laptops only
+
 sddm
 sddm-kcm
 sed
 sudo
 tar
-#tlp #for laptops only
+
 vim
 xdg-desktop-portal
 xdg-user-dirs
 xdg-utils
 xorg-server
 
-# Plasma packages for desktop environment
+
 kde-gtk-config
 kdeplasma-addons
 kgamma5
@@ -65,12 +64,12 @@ plasma-thunderbolt
 plasma-vault
 xdg-desktop-portal-kde
 
-# Shell packages (zsh and some addons)
+
 zsh
 zsh-syntax-highlighting
 zsh-theme-powerlevel10k
 
-# Everyday use programs
+
 blender
 discord
 dolphin
@@ -86,7 +85,7 @@ thunderbird
 vlc
 xournalpp
 
-# Development tools
+
 autoconf
 automake
 bison
@@ -99,7 +98,7 @@ git-lfs
 godot
 make
 
-# Libraries
+
 emscripten
 glfw-x11
 glibc
@@ -109,7 +108,7 @@ mingw-w64-gcc
 mingw-w64-headers
 mingw-w64-winpthreads
 
-# Fonts
+
 adobe-source-han-sans-cn-fonts
 adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
