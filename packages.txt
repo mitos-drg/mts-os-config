@@ -15,9 +15,10 @@ less
 man-db
 man-pages
 mtpfs
+networkmanager
 ntfs-3g
 numlockx
-nvidia-prime
+nvidia
 nvidia-utils
 openresolv
 openssh
