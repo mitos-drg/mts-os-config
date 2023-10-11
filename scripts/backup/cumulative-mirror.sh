@@ -76,4 +76,4 @@ done
 
 # Return to the original directory
 popd
-log-info "Syncronization $SRC <-> $DST completed."
+log-info "Synchronization $SRC <-> $DST completed."

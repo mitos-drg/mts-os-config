@@ -56,7 +56,7 @@ do
         # Push all local changes to backup repository
         pushd "$project"
         git pull backup
-        git push --all --tags backup
+        git push --all backup
         popd
     
     # Non git-based archival projects are simply backed up with rsync
@@ -85,7 +85,7 @@ do
         
         if [ "$answer" != "${answer#[Yy]}" ] ;then 
             log-info "Copying $basename into local Archive..."
-            if [ "$project" == *.git ]; then
+            if [[ "$project" == *.git ]]; then
                 pushd $ARCHIVES
                 git clone -o backup "$BACKUP/Archives/$project"
                 popd

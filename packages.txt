@@ -51,8 +51,8 @@ ksshaskpass
 kwallet-pam
 kwayland-integration
 kwrited
-materia-kde
-materia-gtk-theme
+# materia-kde
+# materia-gtk-theme # TODO: Remove, it's ugly
 papirus-icon-theme
 plasma-browser-integration
 plasma-desktop
@@ -79,6 +79,7 @@ gimp
 gwenview
 inkscape
 konsole
+kwrite
 rsync
 sigil
 spectacle

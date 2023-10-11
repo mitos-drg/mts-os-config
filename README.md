@@ -21,6 +21,8 @@ The configurations files (at least temporarily) will go into `$BACKUP/config` di
 
 # Configurations
 
+For the color theme for KDE Plasma, GTK, Konsole and VS Code just use [Dracula theme](https://draculatheme.com).
+
 System taskbar:
 ```
 start|explorer|browser|discord|blender|clion|godot

@@ -13,8 +13,8 @@ $SCRIPTS_ROOT/backup/archives-sync.sh
 
 
 ### TODO: BACK UP CONFIGURATIONS ###
-$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/config $BACKUP/config
-$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/secrets $BACKUP/secrets
+#$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/config $BACKUP/config
+#$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/secrets $BACKUP/secrets
 
 
 ### BACK UP PERSONAL DATA ###
@@ -25,7 +25,7 @@ $SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/RPG $BACKUP/RPG
 
 ### BACK UP MEDIA FILES ###
 $SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Books $BACKUP/Books
-$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Games $BACKUP/Games
+#$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Games $BACKUP/Games
 $SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Music $BACKUP/Music
 $SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Pictures $BACKUP/Pictures
 $SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Videos/Filmy $BACKUP/Videos/Filmy

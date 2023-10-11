@@ -79,6 +79,30 @@ function archivize-project {
     git-pack $project
 }
 
+function pull-archives {
+    # Change directory into Archives backup and look for not covered projects
+    pushd $BACKUP/Archives
+    for project in *
+    do
+        # Remove .git extension, if it exists
+        basename=${project%.git}
+        
+        # Check if it does not exist in local Archive
+        log-info "Copying $basename into local Archive..."
+        if [ "$project" == *.git ]; then
+            pushd $ARCHIVES
+            git clone -o backup "$BACKUP/Archives/$project"
+            popd
+        else
+            mkdir "$ARCHIVES/$project"
+            rsync -au "$BACKUP/Archives/$project/." "$ARCHIVES/$project"
+        fi
+    done
+
+    # Return to the original directory
+    popd
+}
+
 
 # list of directories to pull
 # 
