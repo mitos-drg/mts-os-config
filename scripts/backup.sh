@@ -28,5 +28,5 @@ $SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Books $BACKUP/Books
 #$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Games $BACKUP/Games
 $SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Music $BACKUP/Music
 $SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Pictures $BACKUP/Pictures
-$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Videos/Filmy $BACKUP/Videos/Filmy
-$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Videos/Video $BACKUP/Videos/Video
+$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Videos/Movies $BACKUP/Videos/Filmy
+$SCRIPTS_ROOT/backup/cumulative-mirror.sh $DATA_ROOT/Videos/Videos $BACKUP/Videos/Video
